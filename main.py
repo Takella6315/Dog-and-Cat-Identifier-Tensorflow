@@ -25,13 +25,6 @@ main_dir = "/input/working/"
 train_dir = "/input/train"
 path = os.path.join(main_dir,train_dir)
 
-for p in os.listdir(path):
-    category = p.split(".")[0]
-    img_array = cv2.imread(os.path.join(path,p),cv2.IMREAD_GRAYSCALE)
-    new_img_array = cv2.resize(img_array, dsize=(80, 80))
-    plt.imshow(new_img_array,cmap="gray")
-    break
-
 X = []
 y = []
 convert = lambda category : int(category == 'dog')
